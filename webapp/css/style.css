@@ -1,0 +1,43 @@
+/* Enter your custom styles here */
+.tileTitle{
+  font-size : large!important;
+}
+/*.panelClass .sapMFlexBoxBGTransparent .sapMFlexItem .sapMFlexItemAlignAuto {*/
+/*	margin: 10px;*/
+	/*width: 220px;*/
+	/*position: absolute;*/
+/*}*/
+.tileClassProcessed {
+	border: 1px solid #009933;
+	border-radius: 2%;
+	margin: 10px;
+	background: #ffffff;
+	box-sizing:border-box;
+	width: 185px;
+	height: 230px;
+	/*background: linear-gradient(#fff 32%, #F8F8F8 32%);*/
+}
+
+.tileClassNotProcessed {
+	border: 1px solid #ff9900;
+	border-radius: 2%;
+	margin: 10px;
+	background: #ffffff;
+	box-sizing:border-box;
+	width: 185px;
+	height: 230px;
+	/*background: linear-gradient(#fff 32%, #F8F8F8 32%);*/
+}
+.localBox{
+	margin: 10px;
+	width:200px;
+}
+.green {
+ background-color: #66FF33 !important;
+}
+.autoDetermined {
+ background-color: #b0c4de !important;
+}
+.yellow {
+ background-color: #FFFF66;
+}

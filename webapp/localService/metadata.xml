@@ -1,0 +1,24 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="YCASHCLAIM_SRV" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="bankFile" sap:content-version="1">
+				<Key><PropertyRef Name="Filedate"/></Key><Property Name="Runid" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Run indicator" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Filedate" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="File Date" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZbcRecCnt" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Record Count"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Bukrs" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Company Code" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Gjahr" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Fiscal Year" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Budat" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Posting Date" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Totcr" Type="Edm.String" Nullable="false" MaxLength="13" sap:unicode="false" sap:label="Amount" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Totdr" Type="Edm.String" Nullable="false" MaxLength="13" sap:unicode="false" sap:label="Amount" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Zcreby" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Entered By" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Zcreat" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Created at" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Zcredate" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Date" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Fdateto" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="File Date" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Budatto" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Posting Date"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Flag" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Indicator" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityContainer Name="YCASHCLAIM_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="bankFileSet" EntityType="YCASHCLAIM_SRV.bankFile" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/></EntityContainer><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/YCASHCLAIM_SRV/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/YCASHCLAIM_SRV/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

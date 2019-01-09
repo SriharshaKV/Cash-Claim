@@ -1,0 +1,29 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form"
+	controllerName="wcm.ycashclaim.controller.Home" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="{i18n>title}" id="hPage">
+		<content>
+			<VBox class="sapUiSmallMargin">
+				<f:SimpleForm id="inputForm" editable="true" layout="ResponsiveGridLayout" title="Operating Cash Claim Processing"
+					singleContainerFullSize="false" labelSpanXL="1" labelSpanL="5" labelSpanM="5" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4"
+					emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1">
+					<f:content>
+						<Label text="File Date" design="Bold"/>
+						<DateRangeSelection id="fileDate" delimiter="-" change="onFileDate" width="80%"/>
+						<Label text="Processed Date" design="Bold"/>
+						<DateRangeSelection id="pDate" delimiter="-" change="onProcessedDate" width="80%" enabled="false"/>
+					</f:content>
+				</f:SimpleForm>
+			</VBox>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<CheckBox id="excludeCheck" text="Exclude Posted Files" selected="true" select="onExcludeCBox" class="sapUiSmallMarginEnd"/>
+				<Button id="showFiles" text="Show Files" press="onShowFilesBtn" type="Accept"/>
+				<ToolbarSpacer/>
+			</Toolbar>
+			<!--<FlexBox id="tilesC" height="auto" width="auto"></FlexBox>-->
+			<!--<HBox id="tilesC"/>-->
+			<Carousel id="carousel1" class="sapUiContentPadding" loop="true" height="auto"/>
+			<!--<Carousel id="tilesC" class="sapUiContentPadding"/>-->
+		</content>
+	</Page>
+</mvc:View>

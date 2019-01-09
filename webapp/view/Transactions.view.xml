@@ -1,0 +1,140 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form"
+	controllerName="wcm.ycashclaim.controller.Transactions" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page id="transcPage" showNavButton="true" navButtonPress="onNavBack">
+		<IconTabBar id="ICTBAR" select="handleIconTabBarSelect">
+			<items>
+				<IconTabFilter id="ITF1" icon="sap-icon://begin" iconColor="Positive" design="Horizontal" key="Action">
+					<content>
+						<OverflowToolbar id="oftb1" visible="false">
+							<Button text="Save" press="onSave" icon="sap-icon://save"/> 
+							<Button text="Simulate" press="onSimulate" icon="sap-icon://simulate"/>
+							<Button text="Post" press="onPost" icon="sap-icon://future"/>
+							<MenuButton text="Export">
+								<menu>
+									<Menu itemSelected="onExportmenu">
+										<items>
+											<MenuItem text="Export Screen"/>
+											<MenuItem text="Export File"/>
+										</items>
+									</Menu>
+								</menu>
+							</MenuButton>
+							<MenuButton text="Details">
+								<menu>
+									<Menu itemSelected="onFilterMenu">
+										<items>
+											<MenuItem text="All Values"/>
+											<MenuItem text="Default Values"/>
+											<MenuItem text="Derived Values"/>
+										</items>
+									</Menu>
+								</menu>
+							</MenuButton>
+							<ToolbarSpacer/>
+							<HBox>
+								<Label text="Posting Key:" class="sapUiSmallMarginTop"/>
+								<DatePicker id="tranDate1" change="onPostingDateChange"></DatePicker>
+							</HBox>
+						</OverflowToolbar>
+						<Table id="tableA" alternateRowColors="true" noDataText="No items found" growing="true" class="sapUiSizeCompact sapUiNoMargin">
+							<columns>
+								<Column id="column0"  width="3em">
+									<header>
+										<Label id="label0" text="Status" design="Bold"/>
+									</header>
+								</Column>
+								<Column id="column1"  width="3em">
+									<header>
+										<Label id="label1" text="Line" design="Bold"/>
+									</header>
+								</Column>
+								<Column id="column2" width="7em">
+									<header>
+										<Label id="label2" text="Posting Key" design="Bold"/>
+									</header>
+								</Column>
+								<Column id="column3"  minScreenWidth="Tablet" demandPopin="true">
+									<header>
+										<Label id="label3" text="Transaction Type" design="Bold"/>
+									</header>
+								</Column>
+								<Column id="column4"  minScreenWidth="Desktop" demandPopin="true" width="auto">
+									<header>
+										<Label id="label4" text="Remark" design="Bold"/>
+									</header>
+								</Column>
+								<Column id="column5"  minScreenWidth="Desktop" demandPopin="true" width="10em">
+									<header>
+										<Label id="label5" text="Amount" design="Bold"/>
+									</header>
+								</Column>
+								<Column id="column6" minScreenWidth="Desktop" demandPopin="true" >
+									<header>
+										<Label id="label6" text="G/L Account" design="Bold"/>
+									</header>
+								</Column>
+								<Column id="column7" minScreenWidth="Desktop" demandPopin="true">
+									<header>
+										<Label id="label7" text="Fund" design="Bold"/>
+									</header>
+								</Column>
+								<Column id="column8" minScreenWidth="Desktop" demandPopin="true">
+									<header>
+										<Label id="label8" text="DocumentNo" design="Bold"/>
+									</header>
+								</Column>
+								<Column id="column9" minScreenWidth="Desktop" demandPopin="true">
+									<header>
+										<Label id="label9" text="Item" design="Bold"/>
+									</header>
+								</Column>
+							</columns>
+						</Table>
+					</content>
+				</IconTabFilter>
+				<IconTabSeparator icon="sap-icon://vertical-grip"/>
+				<IconTabFilter id="ITF2" icon="sap-icon://hint" iconColor="Negative" design="Horizontal" text="No Action Needed" key="NoAction">
+					<content>
+						<Table id="noAction" items="{/}" alternateRowColors="true" noDataText="No items found" growing="true" class="sapUiSizeCompact">
+							<columns>
+								<Column width="8em">
+									<Label text="Value Date" design="Bold"/>
+								</Column>
+								<Column width="6em">
+									<Label text="Posting Key" design="Bold"/>
+								</Column>
+								<Column minScreenWidth="Desktop" demandPopin="true">
+									<Label text="Transaction Type" design="Bold"/>
+								</Column>
+								<Column minScreenWidth="Desktop" demandPopin="true">
+									<Label text="Remark" design="Bold"/>
+								</Column>
+								<Column minScreenWidth="Desktop" demandPopin="true">
+									<Label text="Amount" design="Bold"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem> 
+									<cells>
+										<Text text="{ZbcValueDate}"/>
+										<Text text="{ path:'ZbcRecType', formatter : '.formatter.postingKey'}"/>
+										<Text text="{ZbcDesc}"/>
+										<Link text="{ZbcRemrk01}" press=".onRemarkPress"/>
+										<Text text="{Wrbtr}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</content>
+				</IconTabFilter>
+			</items>
+		</IconTabBar>
+		<footer>
+			<Toolbar id="msgTBar" visible="false">
+				<Button id="messagePopoverBtn" icon="sap-icon://message-popup" type="Emphasized" press="handleMessagePopoverPress"/>
+				<ToolbarSpacer/>
+				<Button text="Cancel" press="onToolbarCancel"/>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

@@ -1,0 +1,48 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+	<Dialog id="remarksDialog" title="Remarks List" contentHeight="auto" contentWidth="auto">
+		<beginButton>
+			<Button text="Close" press=".onCloseDialog"/>
+		</beginButton>
+		<content>
+			<VBox class="sapUiSmallMargin">
+				<f:SimpleForm id="inputFormq" editable="false" layout="ResponsiveGridLayout" width="auto" labelSpanXL="3" labelSpanL="3" labelSpanM="3"
+					labelSpanS="3" adjustLabelSpan="false" emptySpanXL="1" emptySpanL="1" emptySpanM="1" emptySpanS="1" columnsXL="5" columnsL="5" columnsM="5">
+					<f:content>
+						<Label text="Posting Key"/>
+						<Text id="pKey"/>
+						<Label text="Transaction Type"/>
+						<Text id="tType"/>
+						<Label text="Customer Refer"/>
+						<Text id="cRefer"/>
+						<Label text="Bank Refer"/>
+						<Text id="Brefer"/>
+						<Label id="docgL" text="Document Group"/>
+						<Text id="docgT"/>
+					</f:content>
+				</f:SimpleForm>
+			</VBox>
+			<Table id="Remarks" items="{Remarks>/}" alternateRowColors="true" noDataText="No items found" growing="true" class="sapUiNoMargin">
+				<columns>
+					<Column width="4em" hAlign="Center">
+						<Label text="Number" design="Bold"/>
+					</Column>
+					<Column minScreenWidth="Desktop" demandPopin="true">
+						<Label text="Prefix" design="Bold"/>
+					</Column>
+					<Column minScreenWidth="Desktop" demandPopin="true">
+						<Label text="Remark Description" design="Bold"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Text text="{=parseFloat(${Remarks>SeqNum})}"/>
+							<Text text="{Remarks>Prefix}"/>
+							<Text text="{Remarks>Remarks}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Dialog>
+</core:FragmentDefinition>
